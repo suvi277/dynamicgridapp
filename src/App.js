@@ -1,7 +1,7 @@
 
 import './App.css';
 import styled from "styled-components"
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 const Grid = styled.div`
   border: 1px dashed #000;
@@ -28,11 +28,12 @@ function pluck(array, key) {
 function App() {
   let widthInput = React.createRef();
   let textInput = React.createRef();
+  const [warning, setWarning] = useState();
+  const [gridSize] = useState(12);
   let initialColumns = [{
-    size: 12,
+    size: gridSize,
     text: "something"
   }]
-  const [warning, setWarning] = useState();
   const [columns, setColumns] = useState(initialColumns);
   const [jsonValue, setJsonValue] = useState();
 
@@ -48,7 +49,7 @@ function App() {
     const addedWidth = Number(widthInput.current.value)
     const maxSizeIndex = columns.findIndex(col => Math.max(...pluck(columns, 'size')) === col.size )
 
-    if (addedWidth < 1 || addedWidth > 12) {
+    if (addedWidth < 1 || addedWidth > gridSize) {
       setWarning("Invalid Entry")
       return;
     }
@@ -80,7 +81,7 @@ function App() {
     newColumns.splice(index, 1)
     const minSizeIndex = newColumns.findIndex(col => Math.min(...pluck(columns, 'size')) === col.size )
     
-    if (newColumns[minSizeIndex]?.size === 12) {
+    if (newColumns[minSizeIndex]?.size === gridSize) {
       setWarning("Can't remove current column, a grid should have atleast one column");
       return;
     }
