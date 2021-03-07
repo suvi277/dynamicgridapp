@@ -1,0 +1,61 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  color: white;
+  padding: 12px 0;
+  margin-bottom: 20px;
+}
+
+h1 {
+    margin: 0;
+}
+
+.add-column {
+    margin-bottom: 20px;
+}
+
+.warning {
+    color: red;
+}
+
+.close {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    cursor: pointer;
+    color: coral;
+}
+
+.add-column-wrapper {
+    margin-bottom: 20px;
+}
+button {
+    border-color: coral;
+    background-color: coral;
+    margin-left: 12px;
+    color: #fff;
+    padding: 10px 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: rgb(153, 45, 6);
+}
+
+button:hover {
+    border-color: rgb(153, 45, 6);
+    background-color: rgb(153, 45, 6);
+}
+
+input {
+    padding: 10px 15px;
+}
+
+.text-box {
+    display: block;
+    margin: 15px auto;
+}
