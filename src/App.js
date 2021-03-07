@@ -81,7 +81,7 @@ function App() {
     newColumns.splice(index, 1)
     const minSizeIndex = newColumns.findIndex(col => Math.min(...pluck(columns, 'size')) === col.size )
     
-    if (newColumns[minSizeIndex]?.size === gridSize) {
+    if (columns[0]?.size === gridSize) {
       setWarning("Can't remove current column, a grid should have atleast one column");
       return;
     }
